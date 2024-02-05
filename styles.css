@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 12pt;
+    color: #333; /* Foreground color */
+    background-color: #f4f4f4; /* Background color */
+    margin: 15pt;
+}
+
+h1, h2, h3 {
+    font-family: 'Times New Roman', serif;
+}
+
+h1 {
+    font-size: 24pt;
+    color: #007bff;
+}
+
+h2 {
+    font-size: 20pt;
+    color: #0066cc;
+}
+
+h3 {
+    font-size: 16pt;
+    color: #0056b3;
+}
+
+p {
+    font-family: Georgia, serif;
+    color: #666;
+    font-size: 14pt;
+}
+
+a:link, a:visited {
+    color: #007bff; /* Same style for both visited and non-visited links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+a:active {
+    color: #ff0000;
+    text-decoration: underline;
+}
+
+/* CSS Table */
+.divTable {
+    display: table;
+    width: 100%;
+}
+
+.divTableRow {
+    display: table-row;
+}
+
+.divTableHeading {
+    background-color: #EEE;
+    display: table-header-group;
+}
+
+.divTableCell, .divTableHead {
+    border: 1px solid #999999;
+    display: table-cell;
+    padding: 3pt;
+}
+
+.divTableBody {
+    display: table-row-group;
+}
