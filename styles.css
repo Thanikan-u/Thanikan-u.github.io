@@ -1,72 +1,65 @@
+/* styles.css */
 body {
     font-family: Arial, sans-serif;
-    font-size: 12pt;
-    color: #333; /* Foreground color */
-    background-color: #f4f4f4; /* Background color */
-    margin: 15pt;
-}
-
-h1, h2, h3 {
-    font-family: 'Times New Roman', serif;
+    margin: 20px;
+    background-color: #f4f4f4; /* Update background color */
+    color: #333; /* Update text color */
 }
 
 h1 {
-    font-size: 24pt;
-    color: #007bff;
+    color: #0c0c0c;
+    font-size: 24px; /* Add font size */
 }
 
 h2 {
-    font-size: 20pt;
-    color: #0066cc;
-}
-
-h3 {
-    font-size: 16pt;
     color: #0056b3;
+    font-size: 20px; /* Add font size */
 }
 
 p {
-    font-family: Georgia, serif;
+    line-height: 1.6;
     color: #666;
-    font-size: 14pt;
+    font-size: 16px; /* Add font size */
 }
 
-a:link, a:visited {
-    color: #007bff; /* Same style for both visited and non-visited links */
+/* Add styles for the <a> tag */
+a {
+    color: #e44d26;
     text-decoration: none;
+    font-weight: bold;
 }
 
 a:hover {
-    color: #0056b3;
     text-decoration: underline;
 }
 
+/* Add styles for visited links */
+a:visited {
+    color: #800080; /* Purple, for example */
+}
+
+/* Add styles for active links */
 a:active {
-    color: #ff0000;
-    text-decoration: underline;
+    color: #ff0000; /* Red, for example */
 }
 
-/* CSS Table */
-.divTable {
-    display: table;
+/* Add styles for the table layout */
+table {
     width: 100%;
 }
 
-.divTableRow {
-    display: table-row;
+td {
+    padding: 10px;
 }
 
-.divTableHeading {
-    background-color: #EEE;
-    display: table-header-group;
+/* Add styles for the div wrapping the text */
+.text-div {
+    display: inline-block;
+    width: 50%;
 }
 
-.divTableCell, .divTableHead {
-    border: 1px solid #999999;
-    display: table-cell;
-    padding: 3pt;
-}
-
-.divTableBody {
-    display: table-row-group;
+/* Add styles for the div wrapping the links */
+.links-div {
+    display: inline-block;
+    width: 50%;
 }
