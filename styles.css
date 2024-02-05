@@ -2,8 +2,8 @@
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
-    background-color: #f4f4f4; /* Update background color */
-    color: #333; /* Update text color */
+    background-color: #f4f4f4; 
+    color: #333; 
 }
 
 header {
@@ -21,21 +21,20 @@ section {
 
 h1 {
     color: #0c0c0c;
-    font-size: 24px; /* Add font size */
+    font-size: 24px; 
 }
 
 h2 {
     color: #009eb3;
-    font-size: 20px; /* Add font size */
+    font-size: 20px;
 }
 
 p {
     line-height: 1.6;
     color: #250202;
-    font-size: 16px; /* Add font size */
+    font-size: 16px;
 }
 
-/* Add styles for the <a> tag */
 a {
     color: #e44d26;
     text-decoration: none;
@@ -46,17 +45,17 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Add styles for visited links */
+
 a:visited {
-    color: #800080; /* Purple, for example */
+    color: #800080; 
 }
 
-/* Add styles for active links */
+
 a:active {
-    color: #ff0000; /* Red, for example */
+    color: #ff0000; 
 }
 
-/* Add styles for the table layout */
+
 table {
     width: 100%;
 }
@@ -65,13 +64,11 @@ td {
     padding: 10px;
 }
 
-/* Add styles for the div wrapping the text */
 .text-div {
     display: inline-block;
     width: 50%;
 }
 
-/* Add styles for the div wrapping the links */
 .links-div {
     display: inline-block;
     width: 50%;
