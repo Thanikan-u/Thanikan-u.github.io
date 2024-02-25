@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to Thanikan's World</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external styles.css -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -12,6 +12,26 @@
         <h1>Thanikan Umagaran</h1>
         <p>Welcome to my personal website!</p>
     </header>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="#education" onmouseover="" onmouseout="">Education</a></li>
+            <li><a href="#courses" onmouseover="" onmouseout="">Courses/Program</a></li>
+            <li><a href="#awards" onmouseover="" onmouseout="">Educational Awards</a></li>
+            <li><a href="#extracurricular" onmouseover="" onmouseout="">Extracurricular Activities</a></li>
+        </ul>
+    </nav>
+    
+    
+
+    <!-- Button centered -->
+    <button id="promptName" style="display: block; margin: auto; text-align: center;">Tell me your name!</button>
+    <!-- Display the name here, centered when text is added -->
+
+    <!-- Clickable and enlargable image, centered -->
+    <img src="assets/pic.png" alt="Picture of me" id="profilePic" style="display: block; margin: auto; transition: transform 0.3s ease; cursor: pointer; max-width: 100%; height: auto;">
+    <br>
+    <div id="displayName" style="text-align: center; width: 100%;"></div>
 
     <section id="education">
         <header>
@@ -89,6 +109,6 @@
     <footer>
         <p>Feel free to <a href="mailto:Thanikan.Umagaran@torontomu.ca">contact me</a>.</p>
     </footer>
-
+    <script src="script.js"></script>
 </body>
 </html>

@@ -73,3 +73,36 @@ td {
     display: inline-block;
     width: 50%;
 }  
+
+.enlarged {
+    transform: scale(1.2); /* Double the size */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Navigation Menu Styles */
+nav#navbar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav#navbar ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav#navbar ul li {
+    display: inline; /* Display list items in a row */
+    margin-right: 20px; /* Space between menu items */
+}
+
+nav#navbar ul li a {
+    color: #0056b3; /* Match the header color */
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav#navbar ul li a:hover {
+    color: #009eb3; /* Lighter shade for hover effect */
+}
+
