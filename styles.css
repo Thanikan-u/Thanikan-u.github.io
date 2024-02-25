@@ -88,21 +88,28 @@ nav#navbar {
 nav#navbar ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav#navbar ul li {
-    display: inline; /* Display list items in a row */
-    margin-right: 20px; /* Space between menu items */
+    margin: 0 10px;
 }
 
 nav#navbar ul li a {
-    color: #0056b3; /* Match the header color */
-    font-weight: bold;
     text-decoration: none;
-    transition: color 0.3s ease;
+    color: #0056b3;
+    transition: color 0.3s;
 }
 
 nav#navbar ul li a:hover {
-    color: #009eb3; /* Lighter shade for hover effect */
+    color: #009eb3;
 }
+
+/* Menu Content Styles */
+.menuContent {
+    text-align: center;
+    margin: 20px 0;
+}
+
 

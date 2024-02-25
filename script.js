@@ -39,3 +39,17 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('menu1').addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default anchor behavior
+        var content = document.getElementById('menu1Content');
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+
+    document.getElementById('menu2').addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent default anchor behavior
+        var content = document.getElementById('menu2Content');
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    });
+});
