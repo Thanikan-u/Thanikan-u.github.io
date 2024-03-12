@@ -19,12 +19,103 @@
             <li><a href="#courses">Courses/Program</a></li>
             <li><a href="#awards">Educational Awards</a></li>
             <li><a href="#extracurricular">Extracurricular Activities</a></li>
-            <li><a href="#contactForm">Contact Me</a></li>
-            <li><a href="#links">Links</a></li>
+            <li><a href="#" id="menu1">My pages</a></li>
+            <li><a href="#" id="menu2">Connect with me</a></li>
         </ul>
     </nav>
+    <div id="menu1Content" class="menuContent" style="display:none;">
+        <p>My pages:</p>
+        <a href="index.html">Home</a>
+        <br>
+        <a href="assets/Resume lab.pdf">My Resume</a>
+        
+    </div>
+    <div id="menu2Content" class="menuContent" style="display:none;">
+        <p>Let's get in touch!</p>
+        <a href="https://www.linkedin.com/in/tu0215/">Visit linkedin.com!</a>
+        <br>
+        <a href="mailto:Thanikan.Umagaran@torontomu.ca">My email.</a>
+    </div>
 
-    <!-- Your existing content -->
+
+    <button id="promptName" style="display: block; margin: auto; text-align: center;">Tell me your name!</button>
+
+    <img src="assets/pic.png" alt="Picture of me" id="profilePic" style="display: block; margin: auto; transition: transform 0.3s ease; cursor: pointer; max-width: 100%; height: auto;">
+    <br>
+    <div id="displayName" style="text-align: center; width: 100%;"></div>
+
+    <section id="education">
+        <header>
+            <h2>Education</h2>
+        </header>
+        <ul>
+            <li><strong>High School:</strong> L'amoreaux CI, 2020</li>
+            <li><strong>University:</strong> Toronto Metropolitan University, 2025</li>
+        </ul>
+    </section>
+
+    <section id="courses">
+        <header>
+            <h2>Courses/Program</h2>
+        </header>
+        <table>
+            <tr>
+                <td>
+                    <p>The program I'm enrolled in is called Business Technology Management (BTM). In this program, we learned how to apply the technological aspect of things into the commerce world.</p>
+                    <p>ITM200 (Intro to Python) was my favorite course as it exposed me to programming languages:</p>
+                </td>
+                <td>
+                    <ol>
+                        <li>ITM301 - IT Infrastructure</li>
+                        <li>CPS109 - Intro to Computer Science</li>
+                        <li>ITM445 - Multimedia and Business</li>
+                    </ol>
+                    <p>I found the <strong>CPS109</strong> particularly useful because it allowed me to gain a foundation in coding.</p>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="awards">
+        <header>
+            <h2>Educational Awards</h2>
+        </header>
+        <ul>
+            <li>Entrance Scholarship</li>
+        </ul>
+    </section>
+
+    <section id="extracurricular">
+        <header>
+            <h2>Extracurricular Activities</h2>
+        </header>
+        <table>
+            <tr>
+                <td>
+                    <ul>
+                        <li>MDSA - Director of Data Science</li>
+                        <li>TedxTorontoMU - Director of Communications</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="links">
+        <header>
+            <h2>Links</h2>
+        </header>
+        <table>
+            <tr>
+                <td><a href="https://www.linkedin.com/in/tu0215/">Visit linkedin.com!</a></td>
+                <td>This contains my portfolio of work and school experience</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.champssports.ca/">Visit champssports.ca!</a></td>
+                <td>This was my old workplace where I worked as a sales associate</td>
+            </tr>
+        </table>
+    </section>
 
     <!-- Start of Contact Me Form -->
     <section id="contactForm">
