@@ -23,7 +23,7 @@ function handleNavigationHover() {
 
     navItems.forEach(item => {
         item.onmouseover = function() {
-            this.style.backgroundColor = '#009eb3'; // Example effect
+            this.style.backgroundColor = '#009eb3'; 
             this.style.color = '#ffffff';
         };
 
