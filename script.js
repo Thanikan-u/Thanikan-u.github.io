@@ -37,7 +37,7 @@ function handleNavigationHover() {
 function toggleMenu() {
     ['menu1', 'menu2'].forEach(menuId => {
         document.getElementById(menuId).addEventListener('click', function(e) {
-            e.preventDefault(); // Prevent default anchor behavior
+            e.preventDefault();
             var contentId = `${menuId}Content`;
             var content = document.getElementById(contentId);
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
@@ -52,20 +52,17 @@ function submitForm() {
         localStorage.setItem(key, value);
     }
     alert('Your form has been submitted successfully!');
-    // Consider adding code here to reset the form if needed
     form.reset();
 }
 
-// Combine all DOMContentLoaded listeners into one
 document.addEventListener('DOMContentLoaded', function() {
     promptAndDisplayName();
     enlargePicture();
     handleNavigationHover();
     toggleMenu();
 
-    // Attach form submit function to the submit button, assuming your button has an id of "formSubmit"
     document.getElementById('formSubmit').onclick = function(event) {
-        event.preventDefault(); // Prevent the actual form submission
+        event.preventDefault(); 
         submitForm();
     };
 });
