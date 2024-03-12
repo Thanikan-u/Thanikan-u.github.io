@@ -18,13 +18,7 @@ function enlargePicture() {
     };
 }
 
-// Ensure that the DOM is fully loaded before executing functions
-document.addEventListener('DOMContentLoaded', function() {
-    promptAndDisplayName();
-    enlargePicture();
-});
-
-document.addEventListener('DOMContentLoaded', function() {
+function handleNavigationHover() {
     const navItems = document.querySelectorAll('nav ul li a');
 
     navItems.forEach(item => {
@@ -38,18 +32,40 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.color = '#0056b3';
         };
     });
-});
+}
 
+function toggleMenu() {
+    ['menu1', 'menu2'].forEach(menuId => {
+        document.getElementById(menuId).addEventListener('click', function(e) {
+            e.preventDefault(); // Prevent default anchor behavior
+            var contentId = `${menuId}Content`;
+            var content = document.getElementById(contentId);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+    });
+}
+
+function submitForm() {
+    const form = document.getElementById('myContactForm');
+    const formData = new FormData(form);
+    for (const [key, value] of formData.entries()) {
+        localStorage.setItem(key, value);
+    }
+    alert('Your form has been submitted successfully!');
+    // Consider adding code here to reset the form if needed
+    form.reset();
+}
+
+// Combine all DOMContentLoaded listeners into one
 document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('menu1').addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent default anchor behavior
-        var content = document.getElementById('menu1Content');
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    });
+    promptAndDisplayName();
+    enlargePicture();
+    handleNavigationHover();
+    toggleMenu();
 
-    document.getElementById('menu2').addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent default anchor behavior
-        var content = document.getElementById('menu2Content');
-        content.style.display = content.style.display === 'block' ? 'none' : 'block';
-    });
+    // Attach form submit function to the submit button, assuming your button has an id of "formSubmit"
+    document.getElementById('formSubmit').onclick = function(event) {
+        event.preventDefault(); // Prevent the actual form submission
+        submitForm();
+    };
 });
