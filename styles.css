@@ -1,69 +1,88 @@
+/* styles.css */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* More modern font */
+    font-family: Arial, sans-serif;
     margin: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #f4f4f4; 
+    color: #333; 
 }
 
 header {
-    background-color: #007BFF; /* Updated to a softer blue */
+    background-color: #0056b3;
     color: #fff;
     padding: 20px;
     text-align: center;
 }
-
 section {
     margin-bottom: 20px;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Added shadow for depth */
-}
-
-h1, h2 {
-    font-weight: normal; /* Lighter font-weight for a modern look */
 }
 
 h1 {
-    color: #333;
-    font-size: 28px;
+    color: #0c0c0c;
+    font-size: 24px; 
 }
 
 h2 {
-    color: #0056b3;
-    font-size: 22px;
+    color: #009eb3;
+    font-size: 20px;
 }
 
-p, a {
+p {
     line-height: 1.6;
+    color: #250202;
     font-size: 16px;
 }
 
 a {
-    color: #0056b3;
+    color: #e44d26;
     text-decoration: none;
-    transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+    font-weight: bold;
 }
 
-a:hover, a:focus /* Added focus for accessibility */ {
+a:hover {
     text-decoration: underline;
-    color: #009eb3;
 }
+
+
+a:visited {
+    color: #800080; 
+}
+
+
+a:active {
+    color: #ff0000; 
+}
+
 
 table {
-    border-collapse: collapse; /* Improve table appearance */
+    width: 100%;
 }
 
 td {
     padding: 10px;
-    border: 1px solid #ddd; /* Added border for clarity */
 }
 
+.text-div {
+    display: inline-block;
+    width: 50%;
+}
+
+.links-div {
+    display: inline-block;
+    width: 50%;
+}  
+
+.enlarged {
+    transform: scale(1.2); /* Double the size */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Navigation Menu Styles */
 nav#navbar {
     text-align: center;
     margin-bottom: 20px;
-    background-color: #f8f9fa; /* Light background for navbar */
-    padding: 10px 0; /* Added padding for better spacing */
 }
 
 nav#navbar ul {
@@ -71,33 +90,26 @@ nav#navbar ul {
     padding: 0;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* Wrap for better mobile responsiveness */
+}
+
+nav#navbar ul li {
+    margin: 0 10px;
 }
 
 nav#navbar ul li a {
-    padding: 8px 15px; /* Padding for larger clickable area */
-    border-radius: 5px; /* Rounded corners for buttons */
+    text-decoration: none;
+    color: #0056b3;
+    transition: color 0.3s;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    body {
-        margin: 10px;
-    }
-
-    .text-div, .links-div {
-        width: 100%; /* Full width for mobile */
-        margin-bottom: 20px;
-    }
-
-    nav#navbar ul {
-        flex-direction: column;
-    }
+nav#navbar ul li a:hover {
+    color: #009eb3;
 }
 
-/* Enhanced mobile navigation and interactivity */
+/* Menu Content Styles */
 .menuContent {
-    background-color: #eee; /* Slight background for differentiation */
-    border-radius: 5px; /* Consistency in border-radius */
-    padding: 10px; /* Better spacing inside dropdown */
+    text-align: center;
+    margin: 20px 0;
 }
+
+
