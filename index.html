@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <header>
         <h1>Thanikan Umagaran</h1>
-        <p>Welcome to my professional interactive digital resume. Here, you'll find insights into my educational background, skills, achievements, and professional journey.</p>
+        <p>Welcome to my personal website!</p>
     </header>
 
     <nav id="navbar">
@@ -18,42 +19,152 @@
             <li><a href="#courses">Courses/Program</a></li>
             <li><a href="#awards">Educational Awards</a></li>
             <li><a href="#extracurricular">Extracurricular Activities</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact Me</a></li>
+            <li><a href="#" id="menu1">My pages</a></li>
+            <li><a href="#" id="menu2">Connect with me</a></li>
         </ul>
     </nav>
-    
-    <!-- Existing sections: Education, Courses, Awards, Extracurricular -->
+    <div id="menu1Content" class="menuContent" style="display:none;">
+        <p>My pages:</p>
+        <a href="index.html">Home</a>
+        <br>
+        <a href="assets/Resume lab.pdf">My Resume</a>
+        
+    </div>
+    <div id="menu2Content" class="menuContent" style="display:none;">
+        <p>Let's get in touch!</p>
+        <a href="https://www.linkedin.com/in/tu0215/">Visit linkedin.com!</a>
+        <br>
+        <a href="mailto:Thanikan.Umagaran@torontomu.ca">My email.</a>
+    </div>
 
-    <!-- New Section: Projects -->
-    <section id="projects">
+
+    <button id="promptName" style="display: block; margin: auto; text-align: center;">Tell me your name!</button>
+
+    <img src="assets/pic.png" alt="Picture of me" id="profilePic" style="display: block; margin: auto; transition: transform 0.3s ease; cursor: pointer; max-width: 100%; height: auto;">
+    <br>
+    <div id="displayName" style="text-align: center; width: 100%;"></div>
+
+    <section id="education">
         <header>
-            <h2>Highlighted Projects</h2>
+            <h2>Education</h2>
         </header>
-        <p>Explore some of my projects that showcase my skills and contributions to my field. Click on any project for more details.</p>
-        <!-- Placeholder for project listings; each project can be a clickable item leading to detailed descriptions or external project pages. -->
         <ul>
-            <li><a href="#">Project 1 - Description</a></li>
-            <li><a href="#">Project 2 - Description</a></li>
-            <!-- More projects can be listed here -->
+            <li><strong>High School:</strong> L'amoreaux CI, 2020</li>
+            <li><strong>University:</strong> Toronto Metropolitan University, 2025</li>
         </ul>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact">
+    <section id="courses">
+        <header>
+            <h2>Courses/Program</h2>
+        </header>
+        <table>
+            <tr>
+                <td>
+                    <p>The program I'm enrolled in is called Business Technology Management (BTM). In this program, we learned how to apply the technological aspect of things into the commerce world.</p>
+                    <p>ITM200 (Intro to Python) was my favorite course as it exposed me to programming languages:</p>
+                </td>
+                <td>
+                    <ol>
+                        <li>ITM301 - IT Infrastructure</li>
+                        <li>CPS109 - Intro to Computer Science</li>
+                        <li>ITM445 - Multimedia and Business</li>
+                    </ol>
+                    <p>I found the <strong>CPS109</strong> particularly useful because it allowed me to gain a foundation in coding.</p>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="awards">
+        <header>
+            <h2>Educational Awards</h2>
+        </header>
+        <ul>
+            <li>Entrance Scholarship</li>
+        </ul>
+    </section>
+
+    <section id="extracurricular">
+        <header>
+            <h2>Extracurricular Activities</h2>
+        </header>
+        <table>
+            <tr>
+                <td>
+                    <ul>
+                        <li>MDSA - Director of Data Science</li>
+                        <li>TedxTorontoMU - Director of Communications</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="links">
+        <header>
+            <h2>Links</h2>
+        </header>
+        <table>
+            <tr>
+                <td><a href="https://www.linkedin.com/in/tu0215/">Visit linkedin.com!</a></td>
+                <td>This contains my portfolio of work and school experience</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.champssports.ca/">Visit champssports.ca!</a></td>
+                <td>This was my old workplace where I worked as a sales associate</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Start of Contact Me Form -->
+    <section id="contactForm">
         <header>
             <h2>Contact Me</h2>
         </header>
-        <p>I'm open to collaboration opportunities and discussions. Feel free to reach out to me through the following channels:</p>
-        <ul>
-            <li>Email: <a href="mailto:Thanikan.Umagaran@torontomu.ca">Thanikan.Umagaran@torontomu.ca</a></li>
-            <li>LinkedIn: <a href="https://www.linkedin.com/in/tu0215/">tu0215</a></li>
-            <!-- Additional contact methods can be added here -->
-        </ul>
+        <form id="myContactForm">
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+
+            <label for="email">Your Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+
+            <label>Your Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label><br>
+            
+            <label for="contact">Other Contacts:</label><br>
+            <input type="text" id="contact" name="contact"><br>
+
+            <label for="feedback">Your Feedback:</label><br>
+            <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
+
+            <label for="visitReason">Reason for Visiting:</label><br>
+            <select id="visitReason" name="visitReason">
+                <option value="education">Education</option>
+                <option value="courses">Courses/Program</option>
+                <option value="awards">Educational Awards</option>
+                <option value="extracurricular">Extracurricular Activities</option>
+                <option value="other">Other</option>
+            </select><br>
+
+            <input type="checkbox" id="subscribe" name="subscribe">
+            <label for="subscribe">Subscribe to newsletter</label><br>
+
+            <input type="date" id="visitDate" name="visitDate"><br>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
     </section>
+    <!-- End of Contact Me Form -->
 
     <footer>
-        <p>Thank you for visiting my site. Let's connect!</p>
+        <p>Feel free to <a href="mailto:Thanikan.Umagaran@torontomu.ca">contact me</a>.</p>
     </footer>
     <script src="script.js"></script>
 </body>
