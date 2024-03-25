@@ -15,61 +15,157 @@
 
     <nav id="navbar">
         <ul>
-            <li><a href="#education" tabindex="0">Education</a></li>
-            <li><a href="#courses" tabindex="0">Courses/Program</a></li>
-            <li><a href="#awards" tabindex="0">Educational Awards</a></li>
-            <li><a href="#extracurricular" tabindex="0">Extracurricular Activities</a></li>
-            <li><button id="menu1" aria-expanded="false" onclick="toggleMenu('menu1Content')">My pages</button></li>
-            <li><button id="menu2" aria-expanded="false" onclick="toggleMenu('menu2Content')">Connect with me</button></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#courses">Courses/Program</a></li>
+            <li><a href="#awards">Educational Awards</a></li>
+            <li><a href="#extracurricular">Extracurricular Activities</a></li>
+            <li><a href="#" id="menu1">My pages</a></li>
+            <li><a href="#" id="menu2">Connect with me</a></li>
         </ul>
     </nav>
-
-    <div id="menu1Content" class="menuContent" style="display:none;" aria-hidden="true">
-        <!-- Menu 1 content goes here -->
+    <div id="menu1Content" class="menuContent" style="display:none;">
+        <p>My pages:</p>
+        <a href="index.html">Home</a>
+        <br>
+        <a href="assets/Resume lab.pdf">My Resume</a>
+        
     </div>
-
-    <div id="menu2Content" class="menuContent" style="display:none;" aria-hidden="true">
-        <!-- Menu 2 content goes here -->
+    <div id="menu2Content" class="menuContent" style="display:none;">
+        <p>Let's get in touch!</p>
+        <a href="https://www.linkedin.com/in/tu0215/">Visit linkedin.com!</a>
+        <br>
+        <a href="mailto:Thanikan.Umagaran@torontomu.ca">My email.</a>
     </div>
+<!--DOG FOOD-->
 
-    <!-- Additional content goes here -->
+    <button id="promptName" style="display: block; margin: auto; text-align: center;">Tell me your name!</button>
+
+    <img src="assets/pic.png" alt="Picture of me" id="profilePic" style="display: block; margin: auto; transition: transform 0.3s ease; cursor: pointer; max-width: 100%; height: auto;">
+    <br>
+    <div id="displayName" style="text-align: center; width: 100%;"></div>
+
+    <section id="education">
+        <header>
+            <h2>Education</h2>
+        </header>
+        <ul>
+            <li><strong>High School:</strong> L'amoreaux CI, 2020</li>
+            <li><strong>University:</strong> Toronto Metropolitan University, 2025</li>
+        </ul>
+    </section>
+
+    <section id="courses">
+        <header>
+            <h2>Courses/Program</h2>
+        </header>
+        <table>
+            <tr>
+                <td>
+                    <p>The program I'm enrolled in is called Business Technology Management (BTM). In this program, we learned how to apply the technological aspect of things into the commerce world.</p>
+                    <p>ITM200 (Intro to Python) was my favorite course as it exposed me to programming languages:</p>
+                </td>
+                <td>
+                    <ol>
+                        <li>ITM301 - IT Infrastructure</li>
+                        <li>CPS109 - Intro to Computer Science</li>
+                        <li>ITM445 - Multimedia and Business</li>
+                    </ol>
+                    <p>I found the <strong>CPS109</strong> particularly useful because it allowed me to gain a foundation in coding.</p>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="awards">
+        <header>
+            <h2>Educational Awards</h2>
+        </header>
+        <ul>
+            <li>Entrance Scholarship</li>
+        </ul>
+    </section>
+
+    <section id="extracurricular">
+        <header>
+            <h2>Extracurricular Activities</h2>
+        </header>
+        <table>
+            <tr>
+                <td>
+                    <ul>
+                        <li>MDSA - Director of Data Science</li>
+                        <li>TedxTorontoMU - Director of Communications</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+    </section>
+
+    <section id="links">
+        <header>
+            <h2>Links</h2>
+        </header>
+        <table>
+            <tr>
+                <td><a href="https://www.linkedin.com/in/tu0215/">Visit linkedin.com!</a></td>
+                <td>This contains my portfolio of work and school experience</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.champssports.ca/">Visit champssports.ca!</a></td>
+                <td>This was my old workplace where I worked as a sales associate</td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Start of Contact Me Form -->
+    <section id="contactForm">
+        <header>
+            <h2>Contact Me</h2>
+        </header>
+        <form id="myContactForm">
+            <label for="name">Your Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+
+            <label for="email">Your Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+
+            <label>Your Gender:</label><br>
+            <input type="radio" id="male" name="gender" value="male">
+            <label for="male">Male</label><br>
+            <input type="radio" id="female" name="gender" value="female">
+            <label for="female">Female</label><br>
+            <input type="radio" id="other" name="gender" value="other">
+            <label for="other">Other</label><br>
+            
+            <label for="contact">Other Contacts:</label><br>
+            <input type="text" id="contact" name="contact"><br>
+
+            <label for="feedback">Your Feedback:</label><br>
+            <textarea id="feedback" name="feedback" rows="4" cols="50"></textarea><br>
+
+            <label for="visitReason">Reason for Visiting:</label><br>
+            <select id="visitReason" name="visitReason">
+                <option value="education">Education</option>
+                <option value="courses">Courses/Program</option>
+                <option value="awards">Educational Awards</option>
+                <option value="extracurricular">Extracurricular Activities</option>
+                <option value="other">Other</option>
+            </select><br>
+
+            <input type="checkbox" id="subscribe" name="subscribe">
+            <label for="subscribe">Subscribe to newsletter</label><br>
+
+            <input type="date" id="visitDate" name="visitDate"><br>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+            <button type="reset">Reset</button>
+        </form>
+    </section>
+    <!-- End of Contact Me Form -->
 
     <footer>
         <p>Feel free to <a href="mailto:Thanikan.Umagaran@torontomu.ca">contact me</a>.</p>
     </footer>
-
-    <button id="highContrastToggle" onclick="toggleHighContrast()">Toggle High Contrast</button>
-
-    <script>
-        function toggleHighContrast() {
-            document.body.classList.toggle('high-contrast');
-            const isHighContrast = document.body.classList.contains('high-contrast');
-            document.getElementById('highContrastToggle').textContent = isHighContrast ? 'Disable High Contrast' : 'Enable High Contrast';
-        }
-
-        function toggleMenu(contentId) {
-            const content = document.getElementById(contentId);
-            const button = document.querySelector(`button[aria-controls='${contentId}']`);
-            const isExpanded = button.getAttribute('aria-expanded') === 'true';
-            content.style.display = isExpanded ? 'none' : 'block';
-            button.setAttribute('aria-expanded', !isExpanded);
-            content.setAttribute('aria-hidden', isExpanded);
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Check if the user has previously selected high contrast mode
-            const isHighContrast = localStorage.getItem('highContrast') === 'true';
-            if (isHighContrast) {
-                document.body.classList.add('high-contrast');
-                document.getElementById('highContrastToggle').textContent = 'Disable High Contrast';
-            }
-        });
-        
-        // Save the high contrast preference
-        document.getElementById('highContrastToggle').addEventListener('click', () => {
-            const isHighContrast = document.body.classList.contains('high-contrast');
-            localStorage.setItem('highContrast', isHighContrast);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
