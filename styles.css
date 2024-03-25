@@ -1,50 +1,57 @@
+/* Enhanced body styling for overall readability */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 20px;
-    background-color: #f4f4f4; 
-    color: #333; 
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6; /* Improve text readability */
 }
 
+/* Consistent padding and centered text for major sections */
 header, section, footer {
     background-color: #fff;
     padding: 20px;
     text-align: center;
     margin-bottom: 20px;
     border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
+/* Unified color scheme and margin for headings, paragraphs, links, and buttons */
 h1, h2, p, a, button {
     margin: 10px;
     color: #0056b3;
 }
 
-/* Focus styles for better keyboard navigability */
-a:focus, button:focus, input:focus, textarea:focus, a:hover, button:hover {
+/* Enhanced focus and hover styles for interactive elements */
+a:focus, button:focus, input:focus, textarea:focus,
+a:hover, button:hover {
     outline: 3px solid #009eb3;
     outline-offset: 2px;
+    background-color: #eef; /* Light background on focus for contrast */
 }
 
-/* High Contrast Mode Styles */
+/* Adjusted High Contrast Mode styles for better visibility */
 body.high-contrast {
     background-color: #000;
     color: #fff;
 }
 
-body.high-contrast a, 
+body.high-contrast a,
 body.high-contrast button,
 body.high-contrast h1, 
 body.high-contrast h2, 
 body.high-contrast p {
-    color: #ff0;
+    color: #ff0; /* Bright yellow for high visibility */
 }
 
 body.high-contrast header,
 body.high-contrast section, 
 body.high-contrast footer {
-    background-color: #333;
+    background-color: #333; /* Darker background for contrast */
 }
 
-/* Enhancements to existing styles for clarity and accessibility */
+/* Responsive navbar with flexbox for alignment and spacing */
 nav#navbar ul {
     list-style: none;
     padding: 0;
@@ -67,19 +74,20 @@ nav#navbar ul li button {
     transition: color 0.3s, background-color 0.3s;
 }
 
-/* Styles for when items are hovered over */
+/* Hover effects for navbar items for better user interaction feedback */
 nav#navbar ul li a:hover, 
 nav#navbar ul li button:hover {
     color: #009eb3;
     background-color: #eef;
 }
 
+/* Style adjustment for enlarged images to ensure visibility and focus */
 .enlarged {
     transform: scale(1.2);
     transition: transform 0.3s ease;
 }
 
-/* Accessibility improvements for form elements */
+/* Form elements styled for accessibility, visibility, and ease of use */
 input[type="text"],
 input[type="email"],
 textarea {
@@ -88,6 +96,7 @@ textarea {
     margin-top: 5px;
     margin-bottom: 15px;
     width: calc(100% - 18px); /* Adjust width for padding and border */
+    border-radius: 4px; /* Rounded corners for a modern look */
 }
 
 input[type="submit"],
@@ -99,10 +108,11 @@ button[type="reset"] {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s;
+    border-radius: 4px; /* Consistency in button styling */
 }
 
 input[type="submit"]:hover,
 button[type="button"]:hover,
 button[type="reset"]:hover {
-    background-color: #009eb3;
+    background-color: #009eb3; /* Interactive feedback on hover */
 }
