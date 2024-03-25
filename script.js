@@ -1,50 +1,68 @@
 function promptAndDisplayName() {
-    const name = prompt('Please enter your name:');
-    if(name) { // Ensure that a name was entered
+    document.getElementById('promptName').onclick = function() {
+        const name = prompt('Please enter your name:');
         document.getElementById('displayName').innerText = `Hello, ${name}! Welcome to my site.`;
-    }
+    };
 }
 
 function enlargePicture() {
-    const img = document.getElementById('profilePic');
-    img.addEventListener('click', function() {
-        this.classList.toggle('enlarged');
-    });
+    let isEnlarged = false; // Track image state
+    document.getElementById('profilePic').onclick = function() {
+        if (!isEnlarged) {
+            this.classList.add('enlarged');
+            isEnlarged = true;
+        } else {
+            this.classList.remove('enlarged');
+            isEnlarged = false;
+        }
+    };
 }
 
 function handleNavigationHover() {
-    const navItems = document.querySelectorAll('nav ul li a, nav ul li button');
+    const navItems = document.querySelectorAll('nav ul li a');
 
     navItems.forEach(item => {
-        item.addEventListener('mouseover', function() {
+        item.onmouseover = function() {
             this.style.backgroundColor = '#009eb3'; 
             this.style.color = '#ffffff';
-        });
+        };
 
-        item.addEventListener('mouseout', function() {
+        item.onmouseout = function() {
             this.style.backgroundColor = ''; // Revert on mouse out
             this.style.color = '#0056b3';
+        };
+    });
+}
+
+function toggleMenu() {
+    ['menu1', 'menu2'].forEach(menuId => {
+        document.getElementById(menuId).addEventListener('click', function(e) {
+            e.preventDefault();
+            var contentId = `${menuId}Content`;
+            var content = document.getElementById(contentId);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
         });
     });
 }
 
-function toggleMenu(menuId) {
-    const button = document.getElementById(menuId);
-    const contentId = `${menuId}Content`;
-    const content = document.getElementById(contentId);
-    button.addEventListener('click', function(e) {
-        e.preventDefault();
-        const isExpanded = this.getAttribute('aria-expanded') === 'true';
-        content.style.display = isExpanded ? 'none' : 'block';
-        this.setAttribute('aria-expanded', !isExpanded);
-        content.setAttribute('aria-hidden', isExpanded);
-    });
+function submitForm() {
+    const form = document.getElementById('myContactForm');
+    const formData = new FormData(form);
+    for (const [key, value] of formData.entries()) {
+        localStorage.setItem(key, value);
+    }
+    alert('Your form has been submitted successfully!');
+    form.reset();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
     promptAndDisplayName();
     enlargePicture();
     handleNavigationHover();
-    toggleMenu('menu1');
-    toggleMenu('menu2');
+    toggleMenu();
+
+    document.getElementById('formSubmit').onclick = function(event) {
+        event.preventDefault(); 
+        submitForm();
+    };
 });
