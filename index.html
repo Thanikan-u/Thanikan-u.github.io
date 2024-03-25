@@ -19,36 +19,57 @@
             <li><a href="#courses" tabindex="0">Courses/Program</a></li>
             <li><a href="#awards" tabindex="0">Educational Awards</a></li>
             <li><a href="#extracurricular" tabindex="0">Extracurricular Activities</a></li>
-            <button aria-expanded="false" aria-controls="menu1Content" id="menu1" tabindex="0">My pages</button>
-            <button aria-expanded="false" aria-controls="menu2Content" id="menu2" tabindex="0">Connect with me</button>
+            <li><button id="menu1" aria-expanded="false" onclick="toggleMenu('menu1Content')">My pages</button></li>
+            <li><button id="menu2" aria-expanded="false" onclick="toggleMenu('menu2Content')">Connect with me</button></li>
         </ul>
     </nav>
 
     <div id="menu1Content" class="menuContent" style="display:none;" aria-hidden="true">
-        <p>My pages:</p>
-        <a href="index.html">Home</a>
-        <br>
-        <a href="assets/Resume lab.pdf">My Resume</a>
+        <!-- Menu 1 content goes here -->
     </div>
 
     <div id="menu2Content" class="menuContent" style="display:none;" aria-hidden="true">
-        <p>Let's get in touch!</p>
-        <a href="https://www.linkedin.com/in/tu0215/">Visit linkedin.com!</a>
-        <br>
-        <a href="mailto:Thanikan.Umagaran@torontomu.ca">My email.</a>
+        <!-- Menu 2 content goes here -->
     </div>
 
-    <button id="promptName" style="display: block; margin: auto; text-align: center;" tabindex="0">Tell me your name!</button>
-
-    <img src="assets/pic.png" alt="A portrait picture of Thanikan Umagaran" id="profilePic" style="display: block; margin: auto; transition: transform 0.3s ease; cursor: pointer; max-width: 100%; height: auto;">
-    <br>
-    <div id="displayName" style="text-align: center; width: 100%;"></div>
-
-    <!-- The rest of the sections remain the same -->
+    <!-- Additional content goes here -->
 
     <footer>
         <p>Feel free to <a href="mailto:Thanikan.Umagaran@torontomu.ca">contact me</a>.</p>
     </footer>
-    <script src="script.js"></script>
+
+    <button id="highContrastToggle" onclick="toggleHighContrast()">Toggle High Contrast</button>
+
+    <script>
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+            const isHighContrast = document.body.classList.contains('high-contrast');
+            document.getElementById('highContrastToggle').textContent = isHighContrast ? 'Disable High Contrast' : 'Enable High Contrast';
+        }
+
+        function toggleMenu(contentId) {
+            const content = document.getElementById(contentId);
+            const button = document.querySelector(`button[aria-controls='${contentId}']`);
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            content.style.display = isExpanded ? 'none' : 'block';
+            button.setAttribute('aria-expanded', !isExpanded);
+            content.setAttribute('aria-hidden', isExpanded);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if the user has previously selected high contrast mode
+            const isHighContrast = localStorage.getItem('highContrast') === 'true';
+            if (isHighContrast) {
+                document.body.classList.add('high-contrast');
+                document.getElementById('highContrastToggle').textContent = 'Disable High Contrast';
+            }
+        });
+        
+        // Save the high contrast preference
+        document.getElementById('highContrastToggle').addEventListener('click', () => {
+            const isHighContrast = document.body.classList.contains('high-contrast');
+            localStorage.setItem('highContrast', isHighContrast);
+        });
+    </script>
 </body>
 </html>
