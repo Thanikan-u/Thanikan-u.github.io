@@ -1,8 +1,6 @@
 function promptAndDisplayName() {
-    document.getElementById('promptName').onclick = function() {
-        const name = prompt('Please enter your name:');
-        document.getElementById('displayName').innerText = `Hello, ${name}! Welcome to my site.`;
-    };
+    const name = prompt('Please enter your name:');
+    document.getElementById('displayName').innerText = `Hello, ${name}! Welcome to my site.`;
 }
 
 function enlargePicture() {
@@ -19,7 +17,7 @@ function enlargePicture() {
 }
 
 function handleNavigationHover() {
-    const navItems = document.querySelectorAll('nav ul li a');
+    const navItems = document.querySelectorAll('nav ul li a, nav ul li button');
 
     navItems.forEach(item => {
         item.onmouseover = function() {
@@ -36,23 +34,17 @@ function handleNavigationHover() {
 
 function toggleMenu() {
     ['menu1', 'menu2'].forEach(menuId => {
-        document.getElementById(menuId).addEventListener('click', function(e) {
+        const button = document.getElementById(menuId);
+        button.addEventListener('click', function(e) {
             e.preventDefault();
-            var contentId = `${menuId}Content`;
-            var content = document.getElementById(contentId);
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            const contentId = `${menuId}Content`;
+            const content = document.getElementById(contentId);
+            const isExpanded = content.style.display === 'block';
+            content.style.display = isExpanded ? 'none' : 'block';
+            content.setAttribute('aria-hidden', isExpanded);
+            button.setAttribute('aria-expanded', !isExpanded);
         });
     });
-}
-
-function submitForm() {
-    const form = document.getElementById('myContactForm');
-    const formData = new FormData(form);
-    for (const [key, value] of formData.entries()) {
-        localStorage.setItem(key, value);
-    }
-    alert('Your form has been submitted successfully!');
-    form.reset();
 }
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -60,9 +52,4 @@ document.addEventListener('DOMContentLoaded', function() {
     enlargePicture();
     handleNavigationHover();
     toggleMenu();
-
-    document.getElementById('formSubmit').onclick = function(event) {
-        event.preventDefault(); 
-        submitForm();
-    };
 });
