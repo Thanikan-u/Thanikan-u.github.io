@@ -19,8 +19,8 @@
             <li><a href="#courses">Courses/Program</a></li>
             <li><a href="#awards">Educational Awards</a></li>
             <li><a href="#extracurricular">Extracurricular Activities</a></li>
-            <li><a href="#" id="menu1">My pages</a></li>
-            <li><a href="#" id="menu2">Connect with me</a></li>
+            <li><button id="menu1" aria-expanded="false" onclick="toggleMenu('menu1Content')">My pages</button></li>
+            <li><button id="menu2" aria-expanded="false" onclick="toggleMenu('menu2Content')">Connect with me</button></li>
         </ul>
     </nav>
     <div id="menu1Content" class="menuContent" style="display:none;">
@@ -36,6 +36,43 @@
         <br>
         <a href="mailto:Thanikan.Umagaran@torontomu.ca">My email.</a>
     </div>
+    <footer>
+        <p>Feel free to <a href="mailto:Thanikan.Umagaran@torontomu.ca">contact me</a>.</p>
+    </footer>
+
+    <button id="highContrastToggle" onclick="toggleHighContrast()">Toggle High Contrast</button>
+
+    <script>
+        function toggleHighContrast() {
+            document.body.classList.toggle('high-contrast');
+            const isHighContrast = document.body.classList.contains('high-contrast');
+            document.getElementById('highContrastToggle').textContent = isHighContrast ? 'Disable High Contrast' : 'Enable High Contrast';
+        }
+
+        function toggleMenu(contentId) {
+            const content = document.getElementById(contentId);
+            const button = document.querySelector(`button[aria-controls='${contentId}']`);
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            content.style.display = isExpanded ? 'none' : 'block';
+            button.setAttribute('aria-expanded', !isExpanded);
+            content.setAttribute('aria-hidden', isExpanded);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Check if the user has previously selected high contrast mode
+            const isHighContrast = localStorage.getItem('highContrast') === 'true';
+            if (isHighContrast) {
+                document.body.classList.add('high-contrast');
+                document.getElementById('highContrastToggle').textContent = 'Disable High Contrast';
+            }
+        });
+        
+        // Save the high contrast preference
+        document.getElementById('highContrastToggle').addEventListener('click', () => {
+            const isHighContrast = document.body.classList.contains('high-contrast');
+            localStorage.setItem('highContrast', isHighContrast);
+        });
+    </script>
 <!--DOG FOOD-->
 
     <button id="promptName" style="display: block; margin: auto; text-align: center;">Tell me your name!</button>
