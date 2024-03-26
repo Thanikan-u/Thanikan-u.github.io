@@ -40,11 +40,21 @@
 
     <button id="promptName" style="display: block; margin: auto; text-align: center;">Tell me your name!</button>
     <button id="toggleContrast">Toggle High Contrast</button>
-
+    <div id="fontSizer">
+        <button onclick="changeFontSize('increase')">Increase Font Size</button>
+        <button onclick="changeFontSize('decrease')">Decrease Font Size</button>
+        <button onclick="changeFontSize('reset')">Reset Font Size</button>
+    </div>
+    
     <img src="assets/pic.png" alt="Picture of me" id="profilePic" style="display: block; margin: auto; transition: transform 0.3s ease; cursor: pointer; max-width: 100%; height: auto;">
     <br>
     <div id="displayName" style="text-align: center; width: 100%;"></div>
-
+    <div id="colorSchemeChanger">
+        <button onclick="changeColorScheme('default')">Default Color Scheme</button>
+        <button onclick="changeColorScheme('protanopia')">Protanopia</button>
+        <button onclick="changeColorScheme('deuteranopia')">Deuteranopia</button>
+    </div>
+    
     <section id="education">
         <header>
             <h2>Education</h2>
