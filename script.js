@@ -1,11 +1,14 @@
 function promptAndDisplayName() {
     document.getElementById('promptName').onclick = function() {
         const name = prompt('Please enter your name:');
-        document.getElementById('displayName').innerText = `Hello, ${name}! Welcome to my site.`;
+        if (name) {
+            document.getElementById('displayName').innerText = `Hello, ${name}! Welcome to my site.`;
+        }
     };
 }
 
 function enlargePicture() {
+
     let isEnlarged = false; // Track image state
     document.getElementById('profilePic').onclick = function() {
         if (!isEnlarged) {
@@ -15,7 +18,11 @@ function enlargePicture() {
             this.classList.remove('enlarged');
             isEnlarged = false;
         }
-    };
+        const profilePic = document.getElementById('profilePic');
+        profilePic.addEventListener('click', function() {
+            this.classList.toggle('enlarged');
+        });
+    }
 }
 
 function handleNavigationHover() {
@@ -23,7 +30,7 @@ function handleNavigationHover() {
 
     navItems.forEach(item => {
         item.onmouseover = function() {
-            this.style.backgroundColor = '#009eb3'; 
+            this.style.backgroundColor = '#009eb3';
             this.style.color = '#ffffff';
         };
 
@@ -41,9 +48,18 @@ function toggleMenu() {
             var contentId = `${menuId}Content`;
             var content = document.getElementById(contentId);
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            const button = document.getElementById(menuId);
+            const menuContent = document.getElementById(contentId); // Changed variable name
+            button.addEventListener('click', function() {
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                menuContent.style.display = isExpanded ? 'none' : 'block'; // Updated variable reference
+                this.setAttribute('aria-expanded', !isExpanded);
+                menuContent.setAttribute('aria-hidden', !isExpanded); // Updated variable reference
+            });
         });
     });
 }
+
 
 function submitForm() {
     const form = document.getElementById('myContactForm');
@@ -62,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleMenu();
 
     document.getElementById('formSubmit').onclick = function(event) {
-        event.preventDefault(); 
+        event.preventDefault();
         submitForm();
     };
 });
