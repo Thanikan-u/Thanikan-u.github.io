@@ -44,6 +44,17 @@ function toggleMenu() {
         });
     });
 }
+function changeFontSize(action) {
+    const body = document.body;
+    let currentFontSize = parseFloat(window.getComputedStyle(body).fontSize);
+    if (action === 'increase') {
+        body.style.fontSize = `${currentFontSize + 1}px`;
+    } else if (action === 'decrease') {
+        body.style.fontSize = `${currentFontSize - 1}px`;
+    } else if (action === 'reset') {
+        body.style.fontSize = ''; // Reset to default
+    }
+}
 
 function submitForm() {
     const form = document.getElementById('myContactForm');
@@ -53,6 +64,9 @@ function submitForm() {
     }
     alert('Your form has been submitted successfully!');
     form.reset();
+}
+function changeColorScheme(scheme) {
+    document.body.className = scheme;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
