@@ -111,3 +111,38 @@ nav#navbar ul li a:hover {
     text-align: center;
     margin: 20px 0;
 }
+
+/* High contrast color scheme for users with visual impairments */
+.high-contrast {
+    --text-color: #fff;
+    --link-color: #ff0;
+    --link-hover-color: #0ff;
+    --header-bg-color: #000;
+    --header-text-color: #ff0;
+    /* ... */
+}
+:root {
+    --text-color: #333;
+    --link-color: #e44d26;
+    --link-hover-color: #009eb3;
+    --header-bg-color: #0056b3;
+    --header-text-color: #fff;
+    /* ... */
+}
+.font-size-small {
+    font-size: 12px;
+}
+
+.font-size-medium {
+    font-size: 16px;
+}
+
+.font-size-large {
+    font-size: 20px;
+}
+img[alt]:after {
+    content: attr(alt);
+    display: block;
+    font-style: italic;
+    color: #666;
+}
