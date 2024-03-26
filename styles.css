@@ -111,5 +111,29 @@ nav#navbar ul li a:hover {
     text-align: center;
     margin: 20px 0;
 }
+/* Example color schemes */
+:root {
+    --default-background: #f4f4f4;
+    --default-text: #333;
+    --protanopia-background: #f4d4f4;
+    --protanopia-text: #533;
+    --deuteranopia-background: #d4f4f4;
+    --deuteranopia-text: #333;
+}
+
+body.default {
+    background-color: var(--default-background);
+    color: var(--default-text);
+}
+
+body.protanopia {
+    background-color: var(--protanopia-background);
+    color: var(--protanopia-text);
+}
+
+body.deuteranopia {
+    background-color: var(--deuteranopia-background);
+    color: var(--deuteranopia-text);
+}
 
 
