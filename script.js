@@ -47,7 +47,6 @@ function toggleHighContrast() {
 document.getElementById('toggleContrast').addEventListener('click', toggleHighContrast);
 
 function toggleMenu() {
-    // Correctly set up event listeners for each toggleable menu
     const menuButtons = document.querySelectorAll('button[id^="menu"]');
     menuButtons.forEach(button => {
         button.addEventListener('click', function() {
@@ -80,14 +79,14 @@ function toggleHighContrast() {
     const isHighContrast = body.classList.contains('high-contrast');
     localStorage.setItem('highContrast', isHighContrast ? 'true' : 'false');
 
-    // Update the text content of the high contrast toggle button
     const highContrastToggleButton = document.getElementById('highContrastToggle');
     if (highContrastToggleButton) {
         highContrastToggleButton.textContent = isHighContrast ? 'Disable High Contrast' : 'Enable High Contrast';
     }
 }
-
-// Load the high contrast setting on DOMContentLoaded
+function changeColorScheme(scheme) {
+    document.body.className = scheme;
+}
 document.addEventListener('DOMContentLoaded', function() {
     promptAndDisplayName();
     enlargePicture();
@@ -98,14 +97,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (highContrastPreference) {
         document.body.classList.add('high-contrast');
     }
-
-    // Attach the toggleHighContrast function to the button
     const highContrastToggle = document.getElementById('highContrastToggle');
     if (highContrastToggle) {
         highContrastToggle.addEventListener('click', toggleHighContrast);
     }
-
-    // Correcting the form submission event listener
     const formSubmitButton = document.getElementById('formSubmit'); // Ensure this ID exists on your submit button
     if (formSubmitButton) {
         formSubmitButton.addEventListener('click', function(event) {
