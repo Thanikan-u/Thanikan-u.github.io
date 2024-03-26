@@ -138,6 +138,20 @@ body.deuteranopia {
 
 /* High contrast color scheme for users with visual impairments */
 /* Adjusting High Contrast Mode */
+/* High Contrast Styles */
+.high-contrast {
+    background-color: black;
+    color: white;
+}
+
+.high-contrast a {
+    color: yellow;
+}
+
+.high-contrast header, .high-contrast section {
+    border-color: white;
+}
+
 .high-contrast {
     background-color: #000 !important; /* Ensure high contrast background */
     color: var(--text-color) !important;
