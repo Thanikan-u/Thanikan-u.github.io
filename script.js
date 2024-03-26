@@ -1,11 +1,14 @@
 function promptAndDisplayName() {
     document.getElementById('promptName').onclick = function() {
         const name = prompt('Please enter your name:');
-        document.getElementById('displayName').innerText = `Hello, ${name}! Welcome to my site.`;
+        if (name) {
+            document.getElementById('displayName').innerText = `Hello, ${name}! Welcome to my site.`;
+        }
     };
 }
 
 function enlargePicture() {
+
     let isEnlarged = false; // Track image state
     document.getElementById('profilePic').onclick = function() {
         if (!isEnlarged) {
@@ -15,7 +18,11 @@ function enlargePicture() {
             this.classList.remove('enlarged');
             isEnlarged = false;
         }
-    };
+        const profilePic = document.getElementById('profilePic');
+        profilePic.addEventListener('click', function() {
+            this.classList.toggle('enlarged');
+        });
+    }
 }
 
 function handleNavigationHover() {
@@ -23,7 +30,7 @@ function handleNavigationHover() {
 
     navItems.forEach(item => {
         item.onmouseover = function() {
-            this.style.backgroundColor = '#009eb3'; 
+            this.style.backgroundColor = '#009eb3';
             this.style.color = '#ffffff';
         };
 
@@ -35,12 +42,16 @@ function handleNavigationHover() {
 }
 
 function toggleMenu() {
-    ['menu1', 'menu2'].forEach(menuId => {
-        document.getElementById(menuId).addEventListener('click', function(e) {
-            e.preventDefault();
-            var contentId = `${menuId}Content`;
-            var content = document.getElementById(contentId);
-            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+    // Correctly set up event listeners for each toggleable menu
+    const menuButtons = document.querySelectorAll('button[id^="menu"]');
+    menuButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const contentId = `${this.id}Content`;
+            const content = document.getElementById(contentId);
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            content.style.display = isExpanded ? 'none' : 'block';
+            this.setAttribute('aria-expanded', !isExpanded);
+            content.setAttribute('aria-hidden', isExpanded.toString());
         });
     });
 }
@@ -55,6 +66,50 @@ function changeFontSize(action) {
         body.style.fontSize = ''; // Reset to default
     }
 }
+
+// Function to toggle high contrast mode
+function toggleHighContrast() {
+    const body = document.body;
+    body.classList.toggle('high-contrast');
+
+    const isHighContrast = body.classList.contains('high-contrast');
+    localStorage.setItem('highContrast', isHighContrast ? 'true' : 'false');
+
+    // Update the text content of the high contrast toggle button
+    const highContrastToggleButton = document.getElementById('highContrastToggle');
+    if (highContrastToggleButton) {
+        highContrastToggleButton.textContent = isHighContrast ? 'Disable High Contrast' : 'Enable High Contrast';
+    }
+}
+
+// Load the high contrast setting on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function() {
+    promptAndDisplayName();
+    enlargePicture();
+    handleNavigationHover();
+    toggleMenu();
+
+    const highContrastPreference = localStorage.getItem('highContrast') === 'true';
+    if (highContrastPreference) {
+        document.body.classList.add('high-contrast');
+    }
+
+    // Attach the toggleHighContrast function to the button
+    const highContrastToggle = document.getElementById('highContrastToggle');
+    if (highContrastToggle) {
+        highContrastToggle.addEventListener('click', toggleHighContrast);
+    }
+
+    // Correcting the form submission event listener
+    const formSubmitButton = document.getElementById('formSubmit'); // Ensure this ID exists on your submit button
+    if (formSubmitButton) {
+        formSubmitButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            submitForm();
+        });
+    }
+});
+
 
 function submitForm() {
     const form = document.getElementById('myContactForm');
@@ -76,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleMenu();
 
     document.getElementById('formSubmit').onclick = function(event) {
-        event.preventDefault(); 
+        event.preventDefault();
         submitForm();
     };
 });

@@ -136,4 +136,62 @@ body.deuteranopia {
     color: var(--deuteranopia-text);
 }
 
+/* High contrast color scheme for users with visual impairments */
+/* Adjusting High Contrast Mode */
+.high-contrast {
+    background-color: #000 !important; /* Ensure high contrast background */
+    color: var(--text-color) !important;
+}
 
+.high-contrast header, .high-contrast section, .high-contrast footer {
+    background-color: var(--header-bg-color) !important;
+    color: var(--header-text-color) !important;
+}
+
+.high-contrast a {
+    color: var(--link-color) !important;
+}
+
+.high-contrast a:hover {
+    color: var(--link-hover-color) !important;
+    text-decoration: underline !important; /* Make link interactions more visible */
+}
+
+/* Ensure form inputs and buttons are also adjusted */
+.high-contrast input[type="text"], .high-contrast input[type="email"], .high-contrast button, .high-contrast input[type="submit"] {
+    background-color: #fff;
+    color: #000;
+    border: 2px solid #ff0; /* Ensure visibility */
+}
+
+/* Ensure visibility for focus states */
+*:focus {
+    outline: 3px solid #ff0;
+    outline-offset: 2px;
+}
+
+:root {
+    --text-color: #333;
+    --link-color: #e44d26;
+    --link-hover-color: #009eb3;
+    --header-bg-color: #0056b3;
+    --header-text-color: #fff;
+    /* ... */
+}
+.font-size-small {
+    font-size: 12px;
+}
+
+.font-size-medium {
+    font-size: 16px;
+}
+
+.font-size-large {
+    font-size: 20px;
+}
+img[alt]:after {
+    content: attr(alt);
+    display: block;
+    font-style: italic;
+    color: #666;
+}
