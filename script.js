@@ -40,6 +40,11 @@ function handleNavigationHover() {
         };
     });
 }
+function toggleHighContrast() {
+    document.body.classList.toggle('high-contrast');
+}
+
+document.getElementById('toggleContrast').addEventListener('click', toggleHighContrast);
 
 function toggleMenu() {
     // Correctly set up event listeners for each toggleable menu
